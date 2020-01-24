@@ -5,15 +5,22 @@ import 'react-tabs/style/react-tabs.css';
 import TabDevices from '../components/tabs_nav/TabDevices';
 import TabDoor from '../components/tabs_nav/TabDoor';
 import TabPrices from '../components/tabs_nav/TabPrices';
+import TabContentOne from './tab_content/TabContentOne';
+import TabContentTwo from './tab_content/TabContentTwo';
+import TabContentThree from './tab_content/TabContentThree';
 import '../css/TabsNav.css';
 
 class TabComponent extends Component {
+	state = {
+		tabIndex : 0
+	}
 	render() {
 		return (
 			<div>
-				<Tabs className="tabs">
+				<Tabs className="tabs" selectedIndex={this.state.tabIndex}
+					onSelect={tabIndex => this.setState({tabIndex})}>
 					<TabList className="tab-nav-container">
-						<Tab>
+						<Tab className={`${this.state.tabIndex === 0 ? 'tab-selected active': null}`}>
 							<TabDoor />
 							<p className="lgScreen" style={{ marginBottom: '1.875rem' }}>
 								<strong>
@@ -26,7 +33,7 @@ class TabComponent extends Component {
 								Cancel
 							</span>
 						</Tab>
-						<Tab>
+						<Tab className={`${this.state.tabIndex === 1 ? 'tab-selected active': null}`}>
 							<TabDevices />
 							<p className="lgScreen" style={{ marginTop: '-5.3125rem' }}>
 								<strong>Watch anywhere</strong>
@@ -35,7 +42,7 @@ class TabComponent extends Component {
 								Devices
 							</span>
 						</Tab>
-						<Tab>
+						<Tab className={`${this.state.tabIndex === 2 ? 'tab-selected active': null}`}>
 							<TabPrices />
 							<p className="lgScreen">
 								<strong>Pick your price</strong>
@@ -46,13 +53,13 @@ class TabComponent extends Component {
 
 					{/* Tabs Content */}
 					<TabPanel>
-					<h2>Any content 1</h2>
+						<TabContentOne />
 					</TabPanel>
 					<TabPanel>
-					<h2>Any content 2</h2>
+						<TabContentTwo />
 					</TabPanel>
 					<TabPanel>
-					<h2>Any content 3</h2>
+						<TabContentThree />
 					</TabPanel>
 				</Tabs>
 			</div>

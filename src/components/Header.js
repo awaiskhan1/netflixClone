@@ -4,7 +4,7 @@ import { NavLink, Link } from 'react-router-dom';
 import styled from 'styled-components';
 import Icon from 'react-icons-kit';
 import { ic_keyboard_arrow_right } from 'react-icons-kit/md/ic_keyboard_arrow_right';
-
+import { Button }  from './Button';
 
 class Header extends Component {
 	render() {
@@ -18,8 +18,9 @@ class Header extends Component {
 						<Title>See what's next.</Title>
 						<SubTitle>WATCH ANYWHERE. CANCEL ANYTIME.</SubTitle>
 						<Link to="/choose-plan">
-							<button  className="main-offer-btn"> try it now <Icon className="Icon" size={37} icon={ic_keyboard_arrow_right} />
-							</button>
+						<Button className="main-offer-btn" primary>
+							try it now <Icon className="Icon" size={37} icon={ic_keyboard_arrow_right} />
+						</Button>
 						</Link>
 					</div>
 				</div>

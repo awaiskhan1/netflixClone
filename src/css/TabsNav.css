@@ -71,17 +71,18 @@
   }
 
   /* The Active Tab */
-  .active, .react-tabs__tab--selected {
+  /* .react-tabs__tab--selected  */
+  .active{
 	background: transparent;
 	border-color: transparent;
 	border-bottom: 4px solid var(--main-red);
-	color: inherit;
+	color: white;
   }
 
   .tab-selected {
 	color: #fff;
   }
-
+  /* .react-tabs__tab--selected svg path */
   .tab-selected svg path {
 	fill: #fff;
   }
